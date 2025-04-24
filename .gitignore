@@ -1,0 +1,8 @@
+data/.DS_Store
+utils/.ipynb_checkpoints/prolific-checkpoint.py
+utils/.ipynb_checkpoints/qualtrics-checkpoint.py
+utils/__pycache__/qualtrics.cpython-312.pyc
+utils/__pycache__/llms.cpython-312.pyc
+utils/__pycache__/inference.cpython-312.pyc
+utils/__pycache__/prolific.cpython-312.pyc
+utils/.DS_Store
