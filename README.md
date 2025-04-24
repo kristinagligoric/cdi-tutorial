@@ -1,7 +1,7 @@
 # README — Confidence-Driven Inference Tutorial
 
 ## What this notebook does
-This Jupyter notebook walks you through an **end-to-end, automated human-AI annotation pipeline** based on **Confidence-Driven Inference (CDI)**. The example is based on the method introduced in:
+This Jupyter notebook walks you through an **end-to-end, automated human-AI annotation pipeline** based on **Confidence-Driven Inference (CDI)**. We collect human annotations via **Prolific** and LLM annotations through **OpenAI**'s API. The example is based on the method introduced in:
 
 ```
 Can Unconfident LLM Annotations Be Used for Confident Conclusions? Kristina Gligorić*, Tijana Zrnic*, Cinoo Lee*, Emmanuel Candès, and Dan Jurafsky. NAACL, 2025.  
