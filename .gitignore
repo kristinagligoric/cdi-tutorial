@@ -6,3 +6,6 @@ utils/__pycache__/llms.cpython-312.pyc
 utils/__pycache__/inference.cpython-312.pyc
 utils/__pycache__/prolific.cpython-312.pyc
 utils/.DS_Store
+.ipynb_checkpoints/tutorial-checkpoint.ipynb
+venv/share/jupyter/nbextensions/jupyter-js-widgets/extension.js.LICENSE.txt
+/venv
