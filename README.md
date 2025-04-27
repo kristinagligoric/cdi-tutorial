@@ -13,7 +13,11 @@ The goal is to estimate a target statistic about a text corpus while **minimizin
 3. **Iteratively sampling the most informative texts** for additional human annotation using the CDI sampling rule.  
 4. **Computing the final point estimate & bootstrap confidence interval** once the annotation budget is exhausted.
 
-Although the example focuses on detecting *politeness* in a corpus, you can adapt the flow to any binary or multi-class text classification task.
+We showcase the estimation of two target statistics:
+1. $mean(Y)$: prevalence of the politeness, i.e., the fraction of texts in the corpus that are polite.
+2. $\beta_{hedge}$: the impact of linguistic features of hedging ($X$) on the perceived politeness ($Y$), estimated with a logistic regression.
+
+Although the example focuses on detecting *politeness* in a corpus and estimating the two target statistics, you can adapt the flow to any binary text classification task and any other target statistic.
 
 ---
 
