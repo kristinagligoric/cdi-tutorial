@@ -14,7 +14,7 @@ The goal is to estimate a target statistic about a text corpus while **minimizin
 4. **Computing the final point estimate & bootstrap confidence interval** once the annotation budget is exhausted.
 
 We focus on annotating texts for **politeness** and showcase the estimation of **two target statistics**:
-1. $mean(Y)$: prevalence of the politeness in a corpus, i.e., the fraction of texts in the corpus that are polite.
+1. $mean(Y)$: prevalence of politeness, i.e., the fraction of texts in the corpus that are polite.
 2. $\beta_{hedge}$: the impact of linguistic features of hedging ($X$) on the perceived politeness ($Y$), estimated with a logistic regression.
 
 Although the example focuses on detecting *politeness* and estimating these two target statistics, you can adapt the flow to any binary text classification task and any other target statistic.
@@ -25,7 +25,7 @@ Although the example focuses on detecting *politeness* and estimating these two 
 
 | Section | Purpose |
 |---------|---------|
-| **Import libraries** | Loads scientific stack (`numpy`, `scipy`, `pandas`, `tqdm`, Qualtrics/Prolific helpers, and `openai` for LLM calls. |
+| **Import libraries** | Loads scientific stack (`numpy`, `scipy`, `pandas`, `tqdm`, Qualtrics/Prolific helpers, and `openai` for LLM calls). |
 | **Parameter blocks** | Separate cells let you tune *CDI hyper-parameters*, *LLM sampling settings*, and *human‑annotation settings* (batch size, budget, etc.). |
 | **Step&nbsp;1 – LLM annotation** | Loads a CSV of raw texts (`data/politeness_dataset.csv`), queries the LLM for a label & confidence for each row, and stores results in the working `data` frame. |
 | **Step&nbsp;2 – Initial human labels** | Publishes the first batch of texts to Qualtrics/Prolific, waits for responses, and merges them back into `data`. Initialize the sampling rule to obtain per‑item selection probabilities. |
