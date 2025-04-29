@@ -47,9 +47,19 @@ def confidence_driven_inference(
     method="percentile",
 ):
 
+    weights_lab = np.divide(
+    sampling_decisions,
+    sampling_probs,
+    out=np.zeros_like(sampling_decisions, dtype=float),
+    where=sampling_probs != 0
+    )    
 
-    weights_lab = sampling_decisions / sampling_probs
-    weights_unlab = (1-sampling_decisions) / (1 - sampling_probs)
+    weights_unlab = np.divide(
+    1-sampling_decisions,
+    1-sampling_probs,
+    out=np.zeros_like(sampling_decisions, dtype=float),
+    where=(1 - sampling_probs) != 0
+    )
 
     if X is None:
 
