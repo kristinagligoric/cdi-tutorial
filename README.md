@@ -17,7 +17,7 @@ We focus on annotating texts for **politeness** and showcase the estimation of *
 1. $mean(Y)$: prevalence of politeness, i.e., the fraction of texts in the corpus that are polite.
 2. $\beta_{hedge}$: the impact of linguistic features of hedging ($X$) on the perceived politeness ($Y$), estimated with a logistic regression.
 
-Although the example focuses on detecting *politeness* and estimating these two target statistics, you can adapt the flow to any binary text classification task and any other target statistic.
+Although the example focuses on detecting *politeness* and estimating these two target statistics, you can adapt the flow to any text classification task and any other target statistic.
 
 ---
 
@@ -30,7 +30,7 @@ Although the example focuses on detecting *politeness* and estimating these two 
 | **Step&nbsp;1 – LLM annotation** | Loads a CSV of raw texts (`data/politeness_dataset.csv`), queries the LLM for a label & confidence for each row, and stores results in the working `data` frame. |
 | **Step&nbsp;2 – Initial human labels** | Publishes the first batch of texts to Qualtrics/Prolific, waits for responses, and merges them back into `data`. Initialize the sampling rule to obtain per‑item selection probabilities. |
 | **Step&nbsp;3 – Iterative sampling loop** | For each batch: choose texts with highest CDI scores → post new survey → ingest responses → update CDI state. |
-| **Step&nbsp;4 – Estimation** | After the last batch, calculate the CDI estimator and a bootstrap 95 % confidence interval. Timing information for the whole pipeline is also logged. |
+| **Step&nbsp;4 – Estimation** | After the last batch, calculate the CDI estimator and a bootstrap 90 % confidence interval. Timing information for the whole pipeline is also logged. |
 
 
 ---
@@ -74,7 +74,7 @@ jupyter notebook
 ## Expected outputs
 
 - Console log showing batch progression and total wall‑clock time.  
-- Printed estimate and 95 % CI for the target metric.
+- Printed estimate and 90 % CI for the target metric.
 
 ---
 
