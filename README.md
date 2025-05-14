@@ -1,7 +1,7 @@
 # Confidence-Driven Inference Tutorial
 
 ## What this tutorial does
-The Jupyter notebook walks you through an **end-to-end, automated human-AI annotation pipeline** based on **Confidence-Driven Inference (CDI)**. We collect human annotations via **Prolific** and LLM annotations through **OpenAI**'s API. The example is based on the method introduced in:
+The Jupyter notebook walks you through an **end-to-end, automated human-AI annotation pipeline** based on **Confidence-Driven Inference (CDI)**. We collect human annotations via **Prolific** or **Amazon Mechanical Turk**, and LLM annotations through **OpenAI**'s API. The example is based on the method introduced in:
 
 ```
 Can Unconfident LLM Annotations Be Used for Confident Conclusions? Kristina Gligorić*, Tijana Zrnic*, Cinoo Lee*, Emmanuel Candès, and Dan Jurafsky. NAACL, 2025.  
@@ -25,10 +25,10 @@ Although the example focuses on detecting *politeness* and estimating these two 
 
 | Section | Purpose |
 |---------|---------|
-| **Import libraries** | Loads scientific stack (`numpy`, `scipy`, `pandas`, `tqdm`, Qualtrics/Prolific helpers, and `openai` for LLM calls). |
+| **Import libraries** | Loads scientific stack (`numpy`, `scipy`, `pandas`, `tqdm`, Qualtrics/Prolific/MTURK helpers, and `openai` for LLM calls). |
 | **Parameter blocks** | Separate cells let you tune *CDI hyper-parameters*, *LLM sampling settings*, and *human‑annotation settings* (batch size, budget, etc.). |
 | **Step&nbsp;1 – LLM annotation** | Loads a CSV of raw texts (`data/politeness_dataset.csv`), queries the LLM for a label & confidence for each row, and stores results in the working `data` frame. |
-| **Step&nbsp;2 – Initial human labels** | Publishes the first batch of texts to Qualtrics/Prolific, waits for responses, and merges them back into `data`. Initialize the sampling rule to obtain per‑item selection probabilities. |
+| **Step&nbsp;2 – Initial human labels** | Publishes the first batch of texts to Prolific or MTURK, waits for responses, and merges them back into `data`. Initialize the sampling rule to obtain per‑item selection probabilities. |
 | **Step&nbsp;3 – Iterative sampling loop** | For each batch: choose texts with highest CDI scores → post new survey → ingest responses → update CDI state. |
 | **Step&nbsp;4 – Estimation** | After the last batch, calculate the CDI estimator and a bootstrap 90 % confidence interval. Timing information for the whole pipeline is also logged. |
 
