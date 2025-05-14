@@ -10,3 +10,5 @@ utils/.DS_Store
 venv/share/jupyter/nbextensions/jupyter-js-widgets/extension.js.LICENSE.txt
 /venv
 utils/.ipynb_checkpoints/inference-checkpoint.py
+utils/__pycache__/mturk.cpython-312.pyc
+utils/.ipynb_checkpoints/mturk-checkpoint.py
