@@ -40,8 +40,7 @@ Although the example focuses on detecting *politeness* and estimating these two 
 ```
 project/
 ├── tutorial.ipynb          # tutorial notebook
-├── tutorial_non-adaptive.ipynb  # simplified version of the tutorial notebook, where all human annotations are collected in a single batch
-├── tutorial_non-adaptive_pre-collected.ipynb  # single batch and assumes pre-collected annotations
+├── tutorial_non-adaptive_pre-collected.ipynb  # simplified version of the tutorial notebook, where all human annotations are collected in a single batch
 ├── data/
 │   └── politeness_dataset.csv
 ├── utils/                  # helper modules (e.g., survey API wrappers, inference modules)
