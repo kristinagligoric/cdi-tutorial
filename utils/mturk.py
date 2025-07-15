@@ -25,7 +25,7 @@ def generate_task_template(task_title, annotation_instructions, text_instance):
 	footer = '''
 	<h3>Please briefly explain why:</h3>
 	<div>
-	  <textarea name="explanation" placeholder="Type your explanation here" required></textarea>
+	  <textarea name="explanation" placeholder="Type your explanation here" ></textarea>
 	</div>
 
 
