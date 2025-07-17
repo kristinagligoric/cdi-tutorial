@@ -127,9 +127,9 @@ def confidence_driven_inference(
                 + estimator(Y, weights_lab)
                 - lam * estimator(Yhat, weights_lab)
             )
-        ppi_pointest = rectified_estimator(Y, Yhat, weights_lab, weights_unlab, lam=lam)
+        cdi_pointest = rectified_estimator(Y, Yhat, weights_lab, weights_unlab, lam=lam)
 
-        ppi_bootstrap_distribution = np.array(
+        cdi_bootstrap_distribution = np.array(
             bootstrap(
                 [Y, Yhat, weights_lab, weights_unlab],
                 rectified_estimator,
@@ -211,11 +211,11 @@ def confidence_driven_inference(
                 - lam * estimator(X, Yhat, weights_lab)
             )
 
-        ppi_pointest = rectified_estimator(
+        cdi_pointest = rectified_estimator(
             X, Y, Yhat, weights_lab, weights_unlab, lam=lam
         )
 
-        ppi_bootstrap_distribution = np.array(
+        cdi_bootstrap_distribution = np.array(
             bootstrap(
                 [X, Y, Yhat, weights_lab, weights_unlab],
                 rectified_estimator,
@@ -239,17 +239,17 @@ def confidence_driven_inference(
     # Compute the lower and upper bounds depending on the method
     if method == "percentile":
         lower_bound = np.quantile(
-            ppi_bootstrap_distribution, alpha_lower, axis=0
+            cdi_bootstrap_distribution, alpha_lower, axis=0
         )
         upper_bound = np.quantile(
-            ppi_bootstrap_distribution, 1 - alpha_upper, axis=0
+            cdi_bootstrap_distribution, 1 - alpha_upper, axis=0
         )
     elif method == "basic":
-        lower_bound = 2 * ppi_pointest - np.quantile(
-            ppi_bootstrap_distribution, 1 - alpha_lower, axis=0
+        lower_bound = 2 * cdi_pointest - np.quantile(
+            cdi_bootstrap_distribution, 1 - alpha_lower, axis=0
         )
-        upper_bound = 2 * ppi_pointest - np.quantile(
-            ppi_bootstrap_distribution, alpha_upper, axis=0
+        upper_bound = 2 * cdi_pointest - np.quantile(
+            cdi_bootstrap_distribution, alpha_upper, axis=0
         )
     else:
         raise ValueError(
@@ -257,11 +257,11 @@ def confidence_driven_inference(
         )
 
     if alternative == "two-sided":
-        return lower_bound, upper_bound
+        return cdi_pointest, (lower_bound, upper_bound)
     elif alternative == "larger":
-        return -np.inf, upper_bound
+        return cdi_pointest, (-np.inf, upper_bound)
     elif alternative == "smaller":
-        return lower_bound, np.inf
+        return cdi_pointest, (lower_bound, np.inf)
     else:
         raise ValueError(
             "Alternative must be either 'two-sided', 'larger' or 'smaller'."
