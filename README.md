@@ -39,14 +39,35 @@ Although the example focuses on detecting *politeness* and estimating these two 
 
 ```
 project/
-├── tutorial.ipynb          # tutorial notebook
-├── tutorial_non-adaptive_pre-collected.ipynb  # simplified version of the tutorial notebook, where all human annotations are collected in a single batch
+├── tutorial_version_1_adaptive_with_pre-collected_labels.ipynb          
+├── tutorial_version_2_adaptive_collecting_labels.ipynb
+├── tutorial_version_3_adaptive_collecting_labels_simplified.ipynb          
+├── tutorial_version_4_non-adaptive_pre-collected_labels.ipynb
 ├── data/
 │   └── politeness_dataset.csv
 ├── utils/                  # helper modules (e.g., survey API wrappers, inference modules)
 |── requirements.txt
+|── credentials.txt
 └── README.md               
 ```
+
+---
+
+## Tutorial Notebooks
+
+This repository includes four versions of the tutorial:
+
+1. **`tutorial_version_1_adaptive_with_pre-collected_labels.ipynb`**  
+   Adaptive label collection using pre-collected human labels (for demonstration purposes).
+
+2. **`tutorial_version_2_adaptive_collecting_labels.ipynb`**  
+   Adaptive label collection with live collection of a small set of new human and LLM labels.
+
+3. **`tutorial_version_3_adaptive_collecting_labels_simplified.ipynb`**  
+   A simplified version of (2), using high-level functions to package adaptive human data collection.
+
+4. **`tutorial_version_4_non-adaptive_pre-collected_labels.ipynb`**  
+   Non-adaptive label collection on a random sample, using pre-collected human labels.
 
 ---
 
