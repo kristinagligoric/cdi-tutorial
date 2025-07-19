@@ -39,10 +39,11 @@ Although the example focuses on detecting *politeness* and estimating these two 
 
 ```
 project/
-├── tutorial_version_1_adaptive_with_pre-collected_labels.ipynb          
-├── tutorial_version_2_adaptive_collecting_labels.ipynb
-├── tutorial_version_3_adaptive_collecting_labels_simplified.ipynb          
-├── tutorial_version_4_non-adaptive_pre-collected_labels.ipynb
+├── tutorial_version_1.ipynb
+├── tutorial_version_2.ipynb
+├── tutorial_version_3.ipynb
+├── tutorial_version_4.ipynb
+├── tutorial_version_5.ipynb
 ├── data/
 │   └── politeness_dataset.csv
 ├── utils/                  # helper modules (e.g., survey API wrappers, inference modules)
@@ -55,19 +56,22 @@ project/
 
 ## Tutorial Notebooks
 
-This repository includes four versions of the tutorial:
+This repository includes five versions of a tutorial:
 
-1. **`tutorial_version_1_adaptive_with_pre-collected_labels.ipynb`**  
-   Adaptive label collection using pre-collected human labels (for demonstration purposes).
+1. **`tutorial_version_1_high-level_pre-collected_labels.ipynb`**  
+   Adaptive label collection using high-level functions and pre-collected human labels (for demonstration purposes).
 
-2. **`tutorial_version_2_adaptive_collecting_labels.ipynb`**  
-   Adaptive label collection with live collection of a small set of new human and LLM labels.
+2. **`tutorial_version_2_high-level_collecting_labels.ipynb`**  
+   Adaptive label collection using high-level functions, with live collection of a small set of new human and LLM labels.
 
-3. **`tutorial_version_3_adaptive_collecting_labels_simplified.ipynb`**  
-   A simplified version of (2), using high-level functions to package adaptive human data collection.
+3. **`tutorial_version_3_low-level_pre-collected_labels.ipynb`**  
+   Adaptive label collection using low-level code, with pre-collected human labels.
 
-4. **`tutorial_version_4_non-adaptive_pre-collected_labels.ipynb`**  
-   Non-adaptive label collection on a random sample, using pre-collected human labels.
+4. **`tutorial_version_4_low-level_collecting_labels.ipynb`**  
+   Adaptive label collection using low-level code, with live collection of a small set of new human and LLM labels.
+
+5. **`tutorial_version_5_non-adaptive.ipynb`**  
+   Non-adaptive label collection on a random sample of texts, using pre-collected human labels.
 
 ---
 
