@@ -126,3 +126,42 @@ def collect_llm_confidence(sample_texts, model, sleep, temperature, OPENAI_API_K
     sample_texts['confidence_in_prediction'] = pd.DataFrame(list_outputs)['confidence_in_prediction'].values
 
     return sample_texts
+
+
+def get_llm_annotations(df, text_based_feature, COLLECT_LLM, model=None, prompt=None, mapping_categories=None,
+                            sleep=1, temperature=0.7, OPENAI_API_KEY=None, positive_class='positive',
+                            N=None, random_state=None):
+    n = len(df)
+    data = pd.DataFrame()
+    data['human'] = [np.nan] * (n)
+    data['llm'] = [np.nan] * (n)
+    data['llm_conf'] = [np.nan] * (n)
+    data['X'] = df[text_based_feature].values
+    data['text'] = df['Text'].values
+
+    if COLLECT_LLM:
+        # collect annotations
+        sample_texts = annotate_texts_with_llm(texts=data['text'].values,
+                                               model=model,
+                                               prompt=prompt,
+                                               mapping_categories=mapping_categories,
+                                               sleep=sleep,
+                                               temperature=temperature,
+                                               OPENAI_API_KEY=OPENAI_API_KEY)
+        # collect verbalized confidence
+        sample_texts = collect_llm_confidence(sample_texts=sample_texts,
+                                              model=model,
+                                              sleep=sleep,
+                                              temperature=temperature,
+                                              OPENAI_API_KEY=OPENAI_API_KEY)
+
+        data['llm'] = sample_texts['LLM_annotation'].apply(lambda x: 1 if x.lower() == positive_class.lower() else 0).values
+        data['llm_conf'] = sample_texts['confidence_in_prediction']
+    else:
+        # load the existing annotations we already collected
+        df['Prediction_gpt-4o'] = pd.read_csv('data/politeness_dataset.csv')['Prediction_gpt-4o'].sample(n=N, random_state=random_state).values
+        df['Confidence_gpt-4o'] = pd.read_csv('data/politeness_dataset.csv')['Confidence_gpt-4o'].sample(n=N, random_state=random_state).values
+        data['llm'] = df['Prediction_gpt-4o'].apply(lambda x: 1 if x.lower() == positive_class.lower() else 0).values
+        data['llm_conf'] = df['Confidence_gpt-4o'].values
+
+    return data

@@ -12,3 +12,17 @@ venv/share/jupyter/nbextensions/jupyter-js-widgets/extension.js.LICENSE.txt
 utils/.ipynb_checkpoints/inference-checkpoint.py
 utils/__pycache__/mturk.cpython-312.pyc
 utils/.ipynb_checkpoints/mturk-checkpoint.py
+.DS_Store
+.ipynb_checkpoints/tutorial_non-adaptive_pre-collected-checkpoint.ipynb
+.ipynb_checkpoints/tutorial_part_2-checkpoint.ipynb
+.ipynb_checkpoints/tutorial_version_1_adaptive_with_pre-collected_labels-checkpoint.ipynb
+.ipynb_checkpoints/tutorial_version_2_adaptive_collecting_labels-checkpoint.ipynb
+.ipynb_checkpoints/tutorial_version_3_adaptive_collecting_labels_simplified-checkpoint.ipynb
+.ipynb_checkpoints/tutorial_version_4_non-adaptive_pre-collected_labels-checkpoint.ipynb
+utils/.ipynb_checkpoints/llms-checkpoint.py
+utils/.ipynb_checkpoints/inference-checkpoint.py
+utils/.ipynb_checkpoints/inference-checkpoint.py
+utils/.ipynb_checkpoints/inference-checkpoint.py
+utils/.ipynb_checkpoints/inference-checkpoint.py
+utils/.ipynb_checkpoints/inference-checkpoint.py
+utils/.ipynb_checkpoints/inference-checkpoint.py
