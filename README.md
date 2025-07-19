@@ -113,3 +113,5 @@ jupyter notebook
 
 Can Unconfident LLM Annotations Be Used for Confident Conclusions? Kristina Gligorić*, Tijana Zrnic*, Cinoo Lee*, Emmanuel Candès, and Dan Jurafsky. NAACL, 2025.  
 
+This tutorial is presented as part of the International Conference on Computational Social Science (IC2S2) tutorial on Bridging Human and LLM Annotations for Statistically Valid Computational Social Science. URL: https://sites.google.com/view/ic2s2-bridging-human/home 
+
