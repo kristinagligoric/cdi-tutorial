@@ -14,8 +14,8 @@ The goal is to estimate a target statistic about a text corpus while **minimizin
 4. **Computing the final point estimate & bootstrap confidence interval** once the annotation budget is exhausted.
 
 We focus on annotating texts for **politeness** and showcase the estimation of **two target statistics**:
-1. $mean(Y)$: prevalence of politeness, i.e., the fraction of texts in the corpus that are polite.
-2. $\beta_{hedge}$: the impact of linguistic features of hedging ($X$) on the perceived politeness ($Y$), estimated with a logistic regression.
+1. $mean(H)$: prevalence of politeness, i.e., the fraction of texts in the corpus that are polite.
+2. $\beta_{hedge}$: the impact of linguistic features of hedging ($X$) on the perceived politeness ($H$), estimated with a logistic regression.
 
 Although the example focuses on detecting *politeness* and estimating these two target statistics, you can adapt the flow to any text classification task and any other target statistic.
 
