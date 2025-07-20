@@ -35,3 +35,4 @@ utils/.ipynb_checkpoints/inference-checkpoint.py
 .DS_Store
 credentials.txt
 credentials.txt
+.ipynb_checkpoints/credentials-checkpoint.txt
