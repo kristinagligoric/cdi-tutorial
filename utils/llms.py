@@ -128,9 +128,17 @@ def collect_llm_confidence(sample_texts, model, sleep, temperature, OPENAI_API_K
     return sample_texts
 
 
-def get_llm_annotations(df, text_based_feature, COLLECT_LLM, model=None, prompt=None, mapping_categories=None,
-                            sleep=1, temperature=0.7, OPENAI_API_KEY=None, positive_class='positive',
-                            N=None, random_state=None):
+def get_llm_annotations(df, text_based_feature, COLLECT_LLM, llm_parameters,  N, random_state):
+
+    model = llm_parameters["model"]
+    prompt = llm_parameters["prompt"]
+    mapping_categories = llm_parameters["mapping_categories"]
+    sleep = llm_parameters["sleep"]
+    temperature = llm_parameters["temperature"]
+    OPENAI_API_KEY = llm_parameters["OPENAI_API_KEY"]
+    positive_class = llm_parameters["positive_class"]
+    
+    
     n = len(df)
     data = pd.DataFrame()
     data['human'] = [np.nan] * (n)

@@ -166,7 +166,7 @@ def run_prolific_annotation_pipeline(survey_links, name_prefix, description, rew
         if study_id:
             study_ids[survey_url] = study_id
             publish_study(study_id, HEADERS, BASE_URL)
-            #print(f"Study {study_id} published for {survey_url}")
+            print(f"Study {study_id} published for {survey_url}")
         else:
             print(f"Failed to create study for {survey_url}")
 

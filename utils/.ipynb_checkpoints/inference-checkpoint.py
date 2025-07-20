@@ -342,8 +342,8 @@ def collect_initial_human_annotations(data, df, COLLECT_HUMAN, HUMAN_SOURCE, bur
     return data
 
 
-def run_adaptive_sampling(data, df, n, burnin_steps, n_human, n_batches, tau,
-                          COLLECT_HUMAN, HUMAN_SOURCE, human_annotation_parameters):
+def run_adaptive_sampling(data, df, burnin_steps, n_human, n_batches,
+                          COLLECT_HUMAN, HUMAN_SOURCE, human_annotation_parameters, tau = 0.1):
 
     categories = human_annotation_parameters["categories"]
     annotation_instruction = human_annotation_parameters["annotation_instruction"]
@@ -365,6 +365,7 @@ def run_adaptive_sampling(data, df, n, burnin_steps, n_human, n_batches, tau,
     AWS_SECRET_ACCESS_KEY = human_annotation_parameters["AWS_SECRET_ACCESS_KEY"]
     positive_class = human_annotation_parameters["positive_class"]
 
+    n = len(df)
     confidence = data['llm_conf'].to_numpy().reshape((n,1))
     confidence_burnin = confidence[:burnin_steps]
     H = data['human'].to_numpy()
