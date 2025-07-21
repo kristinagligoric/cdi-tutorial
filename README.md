@@ -42,9 +42,6 @@ Although the example focuses on detecting *politeness* and estimating these two 
 project/
 ├── tutorial_version_1.ipynb
 ├── tutorial_version_2.ipynb
-├── tutorial_version_3.ipynb
-├── tutorial_version_4.ipynb
-├── tutorial_version_5.ipynb
 ├── data/
 │   └── politeness_dataset.csv
 ├── utils/                  # helper modules (e.g., survey API wrappers, inference modules)
@@ -59,19 +56,10 @@ project/
 
 This repository includes five versions of a tutorial:
 
-1. **`tutorial_version_1_high-level_pre-collected_labels.ipynb`**  
+1. **`tutorial_version_1_adaptive.ipynb`**  
    Adaptive label collection using high-level functions and pre-collected human labels (for demonstration purposes).
 
-2. **`tutorial_version_2_high-level_collecting_labels.ipynb`**  
-   Adaptive label collection using high-level functions, with live collection of a small set of new human and LLM labels.
-
-3. **`tutorial_version_3_low-level_pre-collected_labels.ipynb`**  
-   Adaptive label collection using low-level code, with pre-collected human labels.
-
-4. **`tutorial_version_4_low-level_collecting_labels.ipynb`**  
-   Adaptive label collection using low-level code, with live collection of a small set of new human and LLM labels.
-
-5. **`tutorial_version_5_non-adaptive.ipynb`**  
+2. **`tutorial_version_2_non-adaptive.ipynb`**  
    Non-adaptive label collection on a random sample of texts, using pre-collected human labels.
 
 ---
